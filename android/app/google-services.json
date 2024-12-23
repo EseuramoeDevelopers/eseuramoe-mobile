@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "1042199076144",
+    "project_id": "eseuramoe",
+    "storage_bucket": "eseuramoe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042199076144:android:055ddb6e92e3ca9621fcf5",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042199076144-h7e5c8orh3a4lj63aor6912fa9nh3eov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ6TkBTc6tfTT_0vXQeZgny9ItaELmrL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042199076144-cgvk46s2e6962l2mrlemo5pkpdu32dbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042199076144:android:ff1c5b31bd66671021fcf5",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042199076144-qd9vo0b6okp8j9c0dfn7e3cskhfdi9cc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapp",
+            "certificate_hash": "e551ab3984b14e04369656b4304608f854eb4177"
+          }
+        },
+        {
+          "client_id": "1042199076144-h7e5c8orh3a4lj63aor6912fa9nh3eov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ6TkBTc6tfTT_0vXQeZgny9ItaELmrL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042199076144-cgvk46s2e6962l2mrlemo5pkpdu32dbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042199076144:android:12af2f5db8b072cc21fcf5",
+        "android_client_info": {
+          "package_name": "com.telkomuniversity.eseuramoe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042199076144-ijqgucdrvoafg855sqj270569ns8duk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.telkomuniversity.eseuramoe",
+            "certificate_hash": "d99f5b8774d004eeeb9b52624465e46eb43a3ff6"
+          }
+        },
+        {
+          "client_id": "1042199076144-h7e5c8orh3a4lj63aor6912fa9nh3eov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ6TkBTc6tfTT_0vXQeZgny9ItaELmrL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042199076144-cgvk46s2e6962l2mrlemo5pkpdu32dbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

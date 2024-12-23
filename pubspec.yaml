@@ -1,0 +1,45 @@
+name: myapp
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: ^5.7.0
+  hive: ^2.2.3
+  flutter_screenutil: ^5.9.3
+  local_notifier: ^0.1.6
+  hive_flutter: ^1.1.0
+  get: ^4.6.6
+  connectivity_plus: ^6.1.1
+  logger: ^2.5.0
+  glassmorphism: ^3.0.0
+  rename: ^3.0.2
+  skeletonizer: ^1.4.2
+  intl: ^0.20.1
+  firebase_core: ^3.9.0
+  flutter_spinkit: ^5.2.1
+  google_fonts: ^6.2.1
+  cherry_toast: ^1.11.0
+  google_sign_in: ^6.2.2
+  firebase_auth: ^5.3.4
+  google_nav_bar: ^5.0.7
+  line_icons: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
