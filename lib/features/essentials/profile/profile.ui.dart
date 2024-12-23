@@ -22,10 +22,10 @@ class ProfileUi extends StatelessWidget {
                 top: ScreenUtil().statusBarHeight,
                 bottom: ScreenUtil().bottomBarHeight,
               ),
-              child: Stack(
+              child: const Stack(
                 children: [
                   /* BACKGROUND WIDGETS */
-                  const BackgroundWidget(),
+                  BackgroundWidget(),
 
                   /* CONTENT WIDGETS */
                 ],

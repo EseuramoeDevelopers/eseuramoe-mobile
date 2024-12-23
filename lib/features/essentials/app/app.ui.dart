@@ -26,7 +26,7 @@ class AppUi extends StatelessWidget {
                 case 0:
                   return HomeUi();
                 case 1:
-                  return ProfileUi();
+                  return const ProfileUi();
                 default:
                   return HomeUi();
               }

@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:myapp/core/credentials/firebase.credential.dart';
-import 'package:myapp/features/essentials/app/app.ui.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+import 'package:myapp/features/essentials/initial/initial.ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,11 +34,8 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               brightness: Brightness.dark,
-              extensions: const [
-                SkeletonizerConfigData.dark(),
-              ],
             ),
-            home: AppUi(),
+            home: InitialUi(),
           );
         },
       ),
