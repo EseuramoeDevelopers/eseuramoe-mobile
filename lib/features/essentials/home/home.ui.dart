@@ -53,7 +53,8 @@ class HomeUi extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   /* HEAD PANEL */
@@ -75,20 +76,24 @@ class HomeUi extends StatelessWidget {
                               SizedBox(
                                 height: 0.03.sh,
                               ),
-                      
+
                               /* BODY PANEL */
-                              const Column(
+                              Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   /* OVERVIEW WIDGET */
-                                  OverviewWidget(),
-                      
+                                  OverviewWidget(
+                                    resultCount: homeVM.resultCount,
+                                    detectedCount: homeVM.detectedCount,
+                                    modelCount: homeVM.modelCount,
+                                  ),
+
                                   /* FEATURES WIDGET */
-                                  FeaturesWidget(),
-                      
+                                  const FeaturesWidget(),
+
                                   /* WORKSPACES WIDGET */
-                                  WorkspacesWidget(),
+                                  WorkspacesWidget(data: homeVM.workspaceData),
                                 ],
                               )
                             ],

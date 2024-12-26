@@ -8,6 +8,7 @@ class AppConstants {
   static const String appUrl = 'app-management';
   static const String modelUrl = 'model-management';
   static const String workspaceUrl = 'workspace-management';
+  static const String dataUrl = 'data-management';
 
   // FUNCTIONAL API
   // TEST SECURE
@@ -28,6 +29,9 @@ class AppConstants {
 
   // CHECK OTP
   static const String checkOtpUrl = '$userUrl/verify/otp';
+
+  // DASHBOARD DATA
+  static const String getDashboard = '$dataUrl/get/dashboard';
 
   // WORKSPACES MANAGEMENT
   static const String getWorkspaceUrl = '$workspaceUrl/get/by-user';

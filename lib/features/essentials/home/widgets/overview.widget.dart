@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/features/globals/card.widget.dart';
 import 'package:myapp/static/strings/app.strings.dart';
@@ -7,7 +8,16 @@ import 'package:myapp/static/themes/app.sizes.dart';
 import 'package:myapp/static/themes/app.themes.dart';
 
 class OverviewWidget extends StatelessWidget {
-  const OverviewWidget({super.key});
+  const OverviewWidget({
+    super.key,
+    required this.resultCount,
+    required this.detectedCount,
+    required this.modelCount,
+  });
+
+  final RxString resultCount;
+  final RxString detectedCount;
+  final RxString modelCount;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +45,7 @@ class OverviewWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "01",
+                    detectedCount.value,
                     style: GoogleFonts.poppins(
                       color: AppThemes.whiteColor,
                       fontSize: AppSizes.titleSize,
@@ -67,7 +77,7 @@ class OverviewWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "01",
+                    resultCount.value,
                     style: GoogleFonts.poppins(
                       color: AppThemes.whiteColor,
                       fontSize: AppSizes.titleSize,
@@ -99,7 +109,7 @@ class OverviewWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "01",
+                    modelCount.value,
                     style: GoogleFonts.poppins(
                       color: AppThemes.whiteColor,
                       fontSize: AppSizes.titleSize,

@@ -62,5 +62,9 @@ class AppStrings {
       "Image processing evaluates palm oil seed quality efficiently and accurately.";
 
   static const String d4 = "Lab Test Capture";
-  static const String d5 = "A palm oil seed quality method uses parameters and models for accurate evaluation.";
+  static const String d5 =
+      "A palm oil seed quality method uses parameters and models for accurate evaluation.";
+
+  static const String d6 = "Your Workspaces";
+  static const String d7 = "show more";
 }

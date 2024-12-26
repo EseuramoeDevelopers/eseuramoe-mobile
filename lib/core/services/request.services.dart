@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:logger/logger.dart';
 import 'package:myapp/core/services/api.services.dart';
 import 'package:myapp/core/services/storage.services.dart';
@@ -95,6 +97,7 @@ class RequestServices {
     }
   }
 
+  // AUTHENTICATION - 3
   Future<bool> requestCheckEmail(dynamic requestdata) async {
     try {
       const url = AppConstants.checkEmailUrl;
@@ -109,6 +112,61 @@ class RequestServices {
         } else {
           return false;
         }
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // DATA - 1
+  Future<bool> requestDashboardData() async {
+    try {
+      const url = AppConstants.getDashboard;
+      final response = await _apiServices.get(url);
+
+      if (response.statusCode == 200) {
+        var responses = response.data;
+
+        // SAVING USER WORKSPACE
+        await StorageService("dashboard_data")
+            .save("result_count", responses['data']['resultCount']);
+
+        await StorageService("dashboard_data")
+            .save("model_count", responses['data']['modelCount']);
+
+        await StorageService("dashboard_data")
+            .save("detected_count", responses['data']['detectedCount']);
+
+        await StorageService("dashboard_data")
+            .save("timestamp", responses['data']['timestamp']);
+
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // WORKSPACES - 1
+  Future<bool> requestWorkspacesData() async {
+    try {
+      const url = AppConstants.getWorkspaceUrl;
+      final response = await _apiServices.get(url);
+
+      if (response.statusCode == 200) {
+        var responses = response.data;
+
+        var responseData = jsonEncode(responses['data']);
+
+        // SAVING USER WORKSPACE
+        await StorageService("workspace_data")
+            .save("workspace_data", responseData);
+
+        return true;
       } else {
         return false;
       }

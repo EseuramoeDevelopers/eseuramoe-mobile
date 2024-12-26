@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/features/globals/card.widget.dart';
+import 'package:myapp/static/strings/app.strings.dart';
 import 'package:myapp/static/themes/app.sizes.dart';
 import 'package:myapp/static/themes/app.themes.dart';
 
 class WorkspacesWidget extends StatelessWidget {
-  const WorkspacesWidget({super.key});
+  const WorkspacesWidget({super.key, required this.data});
+
+  final RxList data;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +31,32 @@ class WorkspacesWidget extends StatelessWidget {
               SizedBox(
                 height: 0.02.sh,
               ),
-              Text(
-                "Your Workspaces",
-                style: GoogleFonts.poppins(
-                  color: AppThemes.whiteColor,
-                  fontSize: AppSizes.paragraphSize - 5.sp,
-                  fontWeight: FontWeight.w600,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    AppStrings.d6,
+                    style: GoogleFonts.poppins(
+                      color: AppThemes.whiteColor,
+                      fontSize: AppSizes.paragraphSize - 5.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      AppStrings.d7,
+                      style: GoogleFonts.poppins(
+                        color: AppThemes.whiteColor,
+                        fontSize: AppSizes.paragraphSize - 10.sp,
+                        fontWeight: FontWeight.w500,
+                        decoration: TextDecoration.underline,
+                        decorationColor: AppThemes.whiteColor,
+                      ),
+                    ),
+                  )
+                ],
               ),
               Divider(
                 color: AppThemes.whiteColor.withAlpha(100),
@@ -43,8 +66,10 @@ class WorkspacesWidget extends StatelessWidget {
                 height: 0.4.sh,
                 child: ListView.builder(
                   padding: const EdgeInsets.only(top: 2).w,
-                  itemCount: 5,
+                  itemCount: data.length,
                   itemBuilder: (context, index) {
+                    final workspaceData = data.value[index];
+
                     return Column(
                       children: [
                         SizedBox(
@@ -75,15 +100,16 @@ class WorkspacesWidget extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        "Item ${index + 1}",
+                                        "${workspaceData['Name_WD']}",
                                         style: GoogleFonts.poppins(
                                           color: AppThemes.whiteColor,
-                                          fontSize: AppSizes.paragraphSize,
+                                          fontSize:
+                                              AppSizes.paragraphSize - 5.sp,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                       Text(
-                                        "Item ${index + 1}",
+                                        "${workspaceData['resultCount']} result",
                                         style: GoogleFonts.poppins(
                                           color: AppThemes.whiteColor,
                                           fontSize:
