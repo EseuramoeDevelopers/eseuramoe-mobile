@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/features/essentials/home/home.vm.dart';
 import 'package:myapp/features/globals/card.widget.dart';
 import 'package:myapp/static/strings/app.strings.dart';
 import 'package:myapp/static/themes/app.sizes.dart';
 import 'package:myapp/static/themes/app.themes.dart';
 
 class WorkspacesWidget extends StatelessWidget {
-  const WorkspacesWidget({super.key, required this.data});
+  WorkspacesWidget({super.key, required this.data});
+
+  final homeVM = Get.put(HomeVM());
 
   final RxList data;
 
@@ -44,7 +47,7 @@ class WorkspacesWidget extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: homeVM.handleWorkspaces,
                     child: Text(
                       AppStrings.d7,
                       style: GoogleFonts.poppins(
