@@ -147,6 +147,7 @@ class RegisterUi extends StatelessWidget {
                                           ),
                                           /* BUTTON WIDGET */
                                           ButtonWidget(
+                                            color: AppThemes.whiteColor,
                                             func: registerVM
                                                 .handleRequestStandard,
                                             child: !registerVM
@@ -192,6 +193,7 @@ class RegisterUi extends StatelessWidget {
                                             height: 0.01.sh,
                                           ),
                                           ButtonWidget(
+                                            color: AppThemes.whiteColor,
                                             func:
                                                 registerVM.handleRequestGoogle,
                                             child: !registerVM

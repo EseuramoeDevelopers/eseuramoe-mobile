@@ -128,14 +128,20 @@ class OverviewWidget extends StatelessWidget {
               ),
             ],
           ),
-          Text(
-            "Last updated at: 2024/12/12 21:22:04",
-            style: GoogleFonts.poppins(
-              color: AppThemes.whiteColor,
-              fontSize: AppSizes.paragraphSize - 15.sp,
-              fontWeight: FontWeight.w300,
-            ),
-            textAlign: TextAlign.left,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Last updated at: 2024/12/12 21:22:04",
+                style: GoogleFonts.poppins(
+                  color: AppThemes.whiteColor,
+                  fontSize: AppSizes.paragraphSize - 15.sp,
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ],
           ),
         ],
       ),

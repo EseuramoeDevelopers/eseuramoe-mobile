@@ -39,64 +39,72 @@ class HomeUi extends StatelessWidget {
 
                   /* CONTENT WIDGETS */
                   Obx(() {
-                    return SizedBox(
-                      width: 1.sw,
-                      height: 1.sh,
-                      child: SingleChildScrollView(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 0.05.sh,
-                            horizontal: 0.075.sw,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  /* HEAD PANEL */
-                                  Text(
-                                    "Halo, ${homeVM.userName.value}!",
-                                    style: GoogleFonts.poppins(
-                                      color: AppThemes.whiteColor,
-                                      fontSize: AppSizes.paragraphSize,
-                                      fontWeight: FontWeight.w500,
+                    return RefreshIndicator(
+                      backgroundColor: AppThemes.blackColor,
+                      color: AppThemes.whiteColor,
+                      onRefresh: () async {
+                        await homeVM.reloadData();
+                      },
+                      child: SizedBox(
+                        width: 1.sw,
+                        height: 1.sh,
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 0.05.sh,
+                              horizontal: 0.075.sw,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    /* HEAD PANEL */
+                                    Text(
+                                      "Halo, ${homeVM.userName.value}!",
+                                      style: GoogleFonts.poppins(
+                                        color: AppThemes.whiteColor,
+                                        fontSize: AppSizes.paragraphSize,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                  Image.asset(
-                                    width: 0.2.sw,
-                                    AppPrefixes.logoUrl,
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 0.03.sh,
-                              ),
+                                    Image.asset(
+                                      width: 0.2.sw,
+                                      AppPrefixes.logoUrl,
+                                      fit: BoxFit.fitWidth,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 0.03.sh,
+                                ),
 
-                              /* BODY PANEL */
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  /* OVERVIEW WIDGET */
-                                  OverviewWidget(
-                                    resultCount: homeVM.resultCount,
-                                    detectedCount: homeVM.detectedCount,
-                                    modelCount: homeVM.modelCount,
-                                  ),
+                                /* BODY PANEL */
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    /* OVERVIEW WIDGET */
+                                    OverviewWidget(
+                                      resultCount: homeVM.resultCount,
+                                      detectedCount: homeVM.detectedCount,
+                                      modelCount: homeVM.modelCount,
+                                    ),
 
-                                  /* FEATURES WIDGET */
-                                  const FeaturesWidget(),
+                                    /* FEATURES WIDGET */
+                                    const FeaturesWidget(),
 
-                                  /* WORKSPACES WIDGET */
-                                  WorkspacesWidget(data: homeVM.workspaceData),
-                                ],
-                              )
-                            ],
+                                    /* WORKSPACES WIDGET */
+                                    WorkspacesWidget(
+                                        data: homeVM.workspaceData),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

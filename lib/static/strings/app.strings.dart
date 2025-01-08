@@ -67,4 +67,5 @@ class AppStrings {
 
   static const String d6 = "Your Workspaces";
   static const String d7 = "show more";
+  static const String d8 = "You don't have any workspaces.";
 }

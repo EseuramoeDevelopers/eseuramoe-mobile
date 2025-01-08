@@ -61,41 +61,51 @@ class WorkspacesWidget extends StatelessWidget {
                   )
                 ],
               ),
-              Divider(
-                color: AppThemes.whiteColor.withAlpha(100),
+              const Divider(
+                color: AppThemes.whiteColor,
               ),
               SizedBox(
                 width: 0.85.sw,
                 height: 0.4.sh,
-                child: ListView.builder(
-                  padding: const EdgeInsets.only(top: 2).w,
-                  itemCount: data.length,
-                  itemBuilder: (context, index) {
-                    final workspaceData = data.value[index];
-
-                    return Column(
-                      children: [
-                        SizedBox(
-                          height: 0.01.sh,
+                child: data.isEmpty
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.folder_open,
+                              size: AppSizes.titleSize + 80.sp,
+                              color: AppThemes.whiteColor,
+                            ),
+                            SizedBox(
+                              height: 0.01.sh,
+                            ),
+                            Text(
+                              AppStrings.d8,
+                              style: GoogleFonts.poppins(
+                                color: AppThemes.whiteColor,
+                                fontSize: AppSizes.paragraphSize - 5.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
                         ),
-                        CardWidget(
-                          width: 0.8.sw,
-                          height: 0.075.sh,
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "${index + 1}",
-                                  style: GoogleFonts.poppins(
-                                    color: AppThemes.whiteColor,
-                                    fontSize: AppSizes.titleSize,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 0.6.sw,
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.only(top: 2).w,
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          final workspaceData = data[index];
+                          return Column(
+                            children: [
+                              SizedBox(
+                                height: 0.01.sh,
+                              ),
+                              CardWidget(
+                                width: 0.8.sw,
+                                height: 0.075.sh,
+                                child: Center(
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -103,37 +113,55 @@ class WorkspacesWidget extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        "${workspaceData['Name_WD']}",
+                                        "${index + 1}",
                                         style: GoogleFonts.poppins(
                                           color: AppThemes.whiteColor,
-                                          fontSize:
-                                              AppSizes.paragraphSize - 5.sp,
-                                          fontWeight: FontWeight.w500,
+                                          fontSize: AppSizes.titleSize,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      Text(
-                                        "${workspaceData['resultCount']} result",
-                                        style: GoogleFonts.poppins(
-                                          color: AppThemes.whiteColor,
-                                          fontSize:
-                                              AppSizes.paragraphSize - 10.sp,
-                                          fontWeight: FontWeight.w400,
+                                      SizedBox(
+                                        width: 0.6.sw,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "${workspaceData['Name_WD']}",
+                                              style: GoogleFonts.poppins(
+                                                color: AppThemes.whiteColor,
+                                                fontSize:
+                                                    AppSizes.paragraphSize -
+                                                        5.sp,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                            Text(
+                                              "${workspaceData['resultCount']} result",
+                                              style: GoogleFonts.poppins(
+                                                color: AppThemes.whiteColor,
+                                                fontSize:
+                                                    AppSizes.paragraphSize -
+                                                        10.sp,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 0.01.sh,
-                        ),
-                      ],
-                    );
-                  },
-                ),
+                              ),
+                              SizedBox(
+                                height: 0.01.sh,
+                              ),
+                            ],
+                          );
+                        },
+                      ),
               ),
             ],
           ),

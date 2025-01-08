@@ -146,6 +146,7 @@ class LoginUi extends StatelessWidget {
                                           ),
                                           /* BUTTON WIDGET */
                                           ButtonWidget(
+                                            color: AppThemes.whiteColor,
                                             func: loginVM.handleRequestStandard,
                                             child: !loginVM
                                                     .isLoadingStandard.value
@@ -190,6 +191,7 @@ class LoginUi extends StatelessWidget {
                                             height: 0.01.sh,
                                           ),
                                           ButtonWidget(
+                                            color: AppThemes.whiteColor,
                                             func: loginVM.handleRequestGoogle,
                                             child: !loginVM
                                                     .isLoadingGoogle.value

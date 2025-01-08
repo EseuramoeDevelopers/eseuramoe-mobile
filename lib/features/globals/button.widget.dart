@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myapp/static/themes/app.themes.dart';
 
 class ButtonWidget extends StatefulWidget {
   const ButtonWidget({
     super.key,
     required this.func,
     required this.child,
+    required this.color,
   });
 
   final VoidCallback func;
   final Widget child;
+  final Color color;
 
   @override
   State<ButtonWidget> createState() => ButtonWidgetState();
@@ -28,8 +29,8 @@ class ButtonWidgetState extends State<ButtonWidget> {
             0.05.sh,
           ),
         ),
-        backgroundColor: const WidgetStatePropertyAll(
-          AppThemes.whiteColor,
+        backgroundColor: WidgetStatePropertyAll(
+          widget.color,
         ),
       ),
       child: widget.child,

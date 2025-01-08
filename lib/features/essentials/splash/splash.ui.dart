@@ -87,6 +87,7 @@ class SplashUi extends StatelessWidget {
                         height: 0.02.sh,
                       ),
                       ButtonWidget(
+                        color: AppThemes.whiteColor,
                         func: splashVM.handleButton,
                         child: Text(
                           AppStrings.sButton,

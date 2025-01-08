@@ -47,7 +47,7 @@ class FeaturesWidget extends StatelessWidget {
                       Text(
                         AppStrings.d3,
                         style: GoogleFonts.poppins(
-                          color: AppThemes.whiteColor.withAlpha(200),
+                          color: AppThemes.whiteColor,
                           fontSize: AppSizes.paragraphSize - 15.sp,
                           fontWeight: FontWeight.w300,
                         ),
@@ -104,7 +104,7 @@ class FeaturesWidget extends StatelessWidget {
                       Text(
                         AppStrings.d5,
                         style: GoogleFonts.poppins(
-                          color: AppThemes.whiteColor.withAlpha(200),
+                          color: AppThemes.whiteColor,
                           fontSize: AppSizes.paragraphSize - 15.sp,
                           fontWeight: FontWeight.w300,
                         ),

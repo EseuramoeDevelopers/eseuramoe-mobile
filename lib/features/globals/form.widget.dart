@@ -79,7 +79,7 @@ class FormWidgetState extends State<FormWidget> {
                   Radius.circular(10),
                 ),
                 borderSide: BorderSide(
-                  color: AppThemes.whiteColor.withAlpha(100),
+                  color: AppThemes.whiteColor,
                 ),
               ),
             ),
@@ -89,7 +89,7 @@ class FormWidgetState extends State<FormWidget> {
         Text(
           widget.helper,
           style: GoogleFonts.poppins(
-            color: AppThemes.whiteColor.withAlpha(200),
+            color: AppThemes.whiteColor,
             fontSize: AppSizes.paragraphSize - 5.sp,
             fontWeight: FontWeight.w300,
           ),

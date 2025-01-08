@@ -12,6 +12,12 @@ class HomeVM extends GetxController {
   RxString detectedCount = "0".obs;
   RxList workspaceData = [].obs;
 
+  Future<void> reloadData() async {
+    Future.delayed(const Duration(seconds: 5), () {
+      requestInit();
+    });
+  }
+
   void requestInit() async {
     // REQUEST NEW DATA
     await RequestServices().requestWorkspacesData();
@@ -20,7 +26,10 @@ class HomeVM extends GetxController {
     // UPDATE STATES
     userName.value = (await StorageService("user_data").get("user_name") ?? "")
         .split(" ")
-        .first;
+        .first
+        .toLowerCase()
+        .replaceFirstMapped(
+            RegExp(r'^[a-z]'), (match) => match.group(0)!.toUpperCase());
 
     resultCount.value = formatValue(
         await StorageService("dashboard_data").get("result_count") ?? 0);
